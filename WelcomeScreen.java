@@ -11,6 +11,7 @@ public class WelcomeScreen extends Application{
     public void start(Stage primaryStage){
         Pane pane = new Pane(); 
 
+        pane.getChildren().add(next);
         next.setOnAction(e -> showNextScreen());
 
         Scene scene = new Scene(pane); 
