@@ -5,9 +5,11 @@ import javafx.scene.layout.Pane;
 import javafx.scene.Scene;
 
 public class PingPong extends Application{
+    private Stage ps;
     
     @Override
     public void start(Stage primaryStage){
+        ps = primaryStage;
         Pane pane = new Pane(); 
 
         Scene scene = new Scene(pane); 
