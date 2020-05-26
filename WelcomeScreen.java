@@ -6,22 +6,26 @@ import javafx.scene.Scene;
 
 public class WelcomeScreen extends Application{
     private Button next = new Button("Next");
+    Stage ps;
     
     @Override
     public void start(Stage primaryStage){
+        ps = primaryStage;
         Pane pane = new Pane(); 
 
         pane.getChildren().add(next);
         next.setOnAction(e -> showNextScreen());
 
         Scene scene = new Scene(pane); 
-        primaryStage.setTitle("The Scene is a real Pane");
-        primaryStage.setScene(scene); 
-        primaryStage.show();
+        ps.setTitle("The Scene is a real Pane");
+        ps.setScene(scene); 
+        ps.show();
 
     }
 
     public void showNextScreen(){
-        System.out.println("Hi");
+        ps.close();
+        PingPong game = new PingPong();
+        game.start(ps);
     }
 }
