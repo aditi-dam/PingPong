@@ -1,1 +1,1 @@
-//some text
+System.out.println("Hello world!");
