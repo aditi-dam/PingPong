@@ -16,8 +16,8 @@ public class Paddle{
         this.pane = pane;
     }
     public void draw(){
-        rectangle = new Rectangle(pane.getWidth()/2 + 50, pane.getHeight()/2 + 50, 20, 20);
-        pane.getChildren().add(rectangle);
+        rectangle = new Rectangle(pane.getWidth()/2 + 50, pane.getHeight()/2 + 50, pane.getWidth(), pane.getHeight());
+        pane.getChildren().add(rectangle)
     }
 
 }
