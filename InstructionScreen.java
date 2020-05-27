@@ -31,13 +31,8 @@ public class InstructionScreen extends Application{
             "welcome screen. Then you can click the play button to start the real game."+
             "\nUse your paddle to keep the ball from getting past you as it bounces off "+
             "the walls. Can you do it until time's up?\n"+
-            "If you succeed, you'll be a Ping Pong champion!"+
+            "If you succeed, you'll be a Ping Pong champion! "+
             "Ready to start?");
-
-        alert.showAndWait();
-
-        
-
     }
 
 }
