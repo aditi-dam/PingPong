@@ -1,7 +1,7 @@
 import javafx.application.Application;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
-import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.Scene;
 
 public class PingPong extends Application{
@@ -12,9 +12,12 @@ public class PingPong extends Application{
     @Override
     public void start(Stage primaryStage){
         ps = primaryStage;
-        GridPane pane = new GridPane(); 
-        pane.add(win, 0, 0);
-        pane.add(lose, 0, 1);
+        Pane pane = new Pane(); 
+
+        Paddle paddle = new Paddle(pane);
+        paddle.draw();
+
+        //pane.getChildren().addAll(win, lose);
 
         win.setOnAction(e -> win());
         lose.setOnAction(e -> lose());
