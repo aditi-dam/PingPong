@@ -13,7 +13,7 @@ public class InstructionScreen extends Application{
         Pane pane = new Pane(); 
 
         Scene scene = new Scene(pane); 
-        ps.setTitle("How do you play?");
+        ps.setTitle("How to Play:");
         ps.setScene(scene); 
         ps.show();
 
