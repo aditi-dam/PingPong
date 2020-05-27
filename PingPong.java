@@ -4,6 +4,7 @@ import javafx.stage.Stage;
 import javafx.scene.layout.GridPane;
 import javafx.scene.Scene;
 
+// Aditi test
 public class PingPong extends Application{
     private Stage ps;
     private Button win = new Button("Win");
@@ -21,7 +22,7 @@ public class PingPong extends Application{
 
         Scene scene = new Scene(pane); 
         primaryStage.setTitle("Shouldn't there be a game here?");
-        primaryStage.setScene(scene); 
+        primaryStage.setScene(scene);
         primaryStage.show();
 
     }
