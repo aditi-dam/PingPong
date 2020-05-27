@@ -34,6 +34,5 @@ public class InstructionScreen{
             WelcomeScreen game = new WelcomeScreen();
             game.start(ps);
         }
-    }
- 
+    } 
 }
