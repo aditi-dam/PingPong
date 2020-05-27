@@ -12,7 +12,8 @@ public class InstructionScreen extends Application{
     @Override
     public void start(Stage primaryStage){
         ps = primaryStage;
-        Pane pane = new Pane(); 
+        Pane pane = new Pane();
+        showInstructions();
 
         Scene scene = new Scene(pane); 
         ps.setTitle("Instructions");

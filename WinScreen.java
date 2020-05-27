@@ -19,6 +19,7 @@ public class WinScreen{
         alert.setTitle("Confirmation Dialog with Custom Actions");
         alert.setHeaderText("Look, a Confirmation Dialog with Custom Actions");
         alert.setContentText("Choose your option.");
+        alert.showAndWait();
     
         ButtonType playAgain = new ButtonType("Play Again");
         ButtonType buttonTypeCancel = new ButtonType("Cancel", ButtonData.CANCEL_CLOSE);
