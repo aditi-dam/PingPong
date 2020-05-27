@@ -27,14 +27,17 @@ public class InstructionScreen extends Application{
         alert.setContentText(
             "Welcome to Ping Pong!\n\nCan you keep the ball from bouncing offscreen "+
             "for the entire time, or will this game get the best of you?\n\n\n"+
-            "After reading this page, click on the button to return to the "+
+            "After reading this page, click the OK button to return to the "+
             "welcome screen. Then you can click the play button to start the real game."+
-            "Use your paddle to keep the ball from getting past you as it bounces off "+
+            "\nUse your paddle to keep the ball from getting past you as it bounces off "+
             "the walls. Can you do it until time's up?\n"+
             "If you succeed, you'll be a Ping Pong champion!"+
             "Ready to start?");
 
         alert.showAndWait();
+
+        
+
     }
 
 }
