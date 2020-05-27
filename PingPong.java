@@ -23,7 +23,6 @@ public class PingPong extends Application{
         primaryStage.setTitle("Shouldn't there be a game here?");
         primaryStage.setScene(scene);
         primaryStage.show();
-
     }
 
     public void win(){
@@ -31,6 +30,7 @@ public class PingPong extends Application{
         WinScreen game = new WinScreen();
         game.start(ps);
     }
+
     public void lose(){
         ps.close();
         LoseScreen game = new LoseScreen();
