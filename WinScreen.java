@@ -1,22 +1,37 @@
-import javafx.application.Application;
-import javafx.scene.control.Button;
+import java.util.Optional;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.ButtonBar.ButtonData;
 import javafx.stage.Stage;
-import javafx.scene.layout.Pane;
-import javafx.scene.Scene;
 
-public class WinScreen extends Application{
-    Stage ps;
-    
-    @Override
+
+public class WinScreen{
+    private Stage ps;
+
     public void start(Stage primaryStage){
         ps = primaryStage;
-        Pane pane = new Pane(); 
-
-        Scene scene = new Scene(pane); 
-        ps.setTitle("You've finally won. Took you a while.");
-        ps.setScene(scene); 
-        ps.show();
-
+        showWinScreen();
+    }
+    
+    public void showWinScreen(){
+        Alert alert = new Alert(AlertType.CONFIRMATION);
+        alert.setTitle("Confirmation Dialog with Custom Actions");
+        alert.setHeaderText("Look, a Confirmation Dialog with Custom Actions");
+        alert.setContentText("Choose your option.");
+    
+        ButtonType playAgain = new ButtonType("Play Again");
+        ButtonType buttonTypeCancel = new ButtonType("Cancel", ButtonData.CANCEL_CLOSE);
+    
+        alert.getButtonTypes().setAll(playAgain, buttonTypeCancel);
+    
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.get() == playAgain){
+            WelcomeScreen game = new WelcomeScreen(); 
+            game.start(ps);
+        } else {
+            // ... user chose CANCEL or closed the dialog
+        }
     }
 
 }
