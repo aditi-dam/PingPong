@@ -14,6 +14,13 @@ public class InstructionScreen extends Application{
         ps = primaryStage;
         Pane pane = new Pane(); 
 
+        Scene scene = new Scene(pane); 
+        ps.setTitle("Instructions");
+        ps.setScene(scene); 
+        ps.show();
+    }
+
+    public void showInstructions() {
         Alert alert = new Alert(AlertType.INFORMATION);
         alert.setHeaderText("How to Play:");
         alert.setContentText(
@@ -27,12 +34,6 @@ public class InstructionScreen extends Application{
             "Ready to start?");
 
         alert.showAndWait();
-
-        Scene scene = new Scene(pane); 
-        ps.setTitle("Instructions");
-        ps.setScene(scene); 
-        ps.show();
-
     }
 
 }
