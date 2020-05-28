@@ -18,7 +18,7 @@ public class PingPong extends Application{
         Pane pane = new Pane(); 
 
         Paddle paddle = new Paddle(pane);
-        //paddle.draw();
+        paddle.draw();
 
         //pane.getChildren().addAll(win, lose);
 
