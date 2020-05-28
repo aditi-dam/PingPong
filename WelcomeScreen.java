@@ -5,9 +5,13 @@ import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontSmoothingType;
+import javafx.scene.text.Text;
 import javafx.scene.Scene;
 
 public class WelcomeScreen extends Application{
+    private Text text = new Text("Welcome Screen"); 
     private Button next = new Button("Next");
     private Button instructions = new Button("Instructions");
     Stage ps;
@@ -16,10 +20,16 @@ public class WelcomeScreen extends Application{
     public void start(Stage primaryStage){
         ps = primaryStage;
         GridPane pane = new GridPane(); 
+
+        text.setFont(Font.font ("Reglisse",40)); 
+        text.setFontSmoothingType(FontSmoothingType.LCD);
+        text.setFill(Color.CHARTREUSE);
         
         pane.setBackground(new Background(new BackgroundFill(Color.BLACK, null, null)));
-        pane.add(next, 0, 0);
-        pane.add(instructions, 0, 1);
+        
+        pane.add(text,0,0);
+        pane.add(next, 0, 2);
+        pane.add(instructions, 0, 4);
 
         next.setStyle("-fx-background-color: #1bf723");
         instructions.setStyle("-fx-background-color: #1bf723");
