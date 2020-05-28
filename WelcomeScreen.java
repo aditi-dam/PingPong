@@ -21,8 +21,8 @@ public class WelcomeScreen extends Application{
         pane.add(next, 0, 0);
         pane.add(instructions, 0, 1);
 
-        next.setStyle("-fx-background-color: ##1bf723");
-        instructions.setStyle("-fx-background-color: ##1bf723");
+        next.setStyle("-fx-background-color: #1bf723");
+        instructions.setStyle("-fx-background-color: #1bf723");
 
         next.setOnAction(e -> showNextScreen());
         instructions.setOnAction(e -> showInstructionsScreen());
