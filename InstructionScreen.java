@@ -2,6 +2,7 @@ import java.util.Optional;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.layout.Region;
 import javafx.stage.Stage;
  
 public class InstructionScreen{
@@ -14,18 +15,18 @@ public class InstructionScreen{
  
     public void showInstructions() {
         Alert alert = new Alert(AlertType.INFORMATION);
+        alert.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
+        alert.setResizable(true);
         alert.setHeaderText("How to Play:");
         alert.setContentText(
-            "Welcome to Ping Pong!\n\nCan you keep the ball from bouncing offscreen "+
-            "for the entire time, or will this game get the best of you?\n\n\n"+
-            "After reading this page, click on the button to return to the "+
-            "welcome screen. Then you can click the play button to start the real game. "+
-            "Use your paddle to keep the ball from getting past you as it bounces off "+
-            "the walls. Can you do it until time's up?\n"+
-            "If you succeed, you'll be a Ping Pong champion!"+
-            "Ready to start?");
+            "Welcome to Ping Pong!\n"+
+            "Are your reflexes fast enough, or will this game get the best of you?\n\n"+
+            "When you're done reading, click on the 'Return to Welcome Screen' button. "+
+            "\nClick 'Next' to start the real game. \nUse your paddle to keep the ball from "+
+            "getting past you as it bounces off the walls. Can you do it until time runs out? "+
+            "\nIf you succeed, you'll be a Ping Pong champion! \nReady? Let's play!");
  
-        ButtonType backToWelcomeScreen = new ButtonType("Go back to Welcome Screen");
+        ButtonType backToWelcomeScreen = new ButtonType("Return to Welcome Screen");
   
         alert.getButtonTypes().setAll(backToWelcomeScreen);
   
