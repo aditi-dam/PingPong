@@ -48,7 +48,7 @@ public class Ball extends Pane{
         circle.setCenterY(y);
     }
 
-    public void setSPEED(double sPEED) {
+    public void setSPEED(int sPEED) {
         SPEED = sPEED;
     }
 
