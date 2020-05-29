@@ -23,6 +23,9 @@ public class PingPong extends Application{
         paddle.yProperty().bind(pane.heightProperty().subtract(10));
         pane.getChildren().add(paddle);
 
+        Ball ball = new Ball();
+        pane.getChildren().add(ball);
+
         scene.setOnKeyPressed(e -> {
             if(e.getCode() == KeyCode.RIGHT){
                 move(10);
