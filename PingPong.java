@@ -21,7 +21,7 @@ public class PingPong extends Application{
         Scene scene = new Scene(pane, 200, 200); 
         paddle.setX(pane.getWidth()/2);
         paddle.setY(pane.getHeight() - 10);
-        paddle.xProperty().bind(pane.widthProperty().divide(2));
+        //paddle.xProperty().bind(pane.widthProperty().divide(2));
         paddle.yProperty().bind(pane.heightProperty().subtract(10));
         pane.getChildren().add(paddle);
 
