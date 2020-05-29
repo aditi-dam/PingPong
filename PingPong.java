@@ -62,7 +62,7 @@ public class PingPong extends Application{
     public void move(double x){
         System.out.println("At move");
         System.out.println(paddle.getX());
-        paddle.setX(paddle.getX() + x);
+        paddle.setX(paddle.getX() + x); //setX() not working for some reason
         System.out.println("Set x");
         if(paddle.getX() < 0){
             paddle.setX(0);
