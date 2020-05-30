@@ -104,6 +104,9 @@ public class PingPong extends Application{
             if(y < radius || y > pane.getHeight() - radius){
                 dy *= -1; 
             }
+            if((x >= paddle.getX()) && (x <= paddle.getX() + paddle.getWidth()) && (y == paddle.getY())){
+                //do something to make the ball bounce the opposite way
+            }
             x += dx;
             y += dy;
             circle.setCenterX(x);
