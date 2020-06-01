@@ -1,6 +1,7 @@
 import java.util.Optional;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.DialogPane;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.Region;
 import javafx.stage.Stage;
@@ -17,6 +18,11 @@ public class InstructionScreen{
         Alert alert = new Alert(AlertType.INFORMATION);
         alert.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
         alert.setResizable(true);
+
+        DialogPane dialogPane = alert.getDialogPane();
+        dialogPane.getStylesheets().add(
+            getClass().getResource("instructions.css").toExternalForm());
+        dialogPane.getStyleClass().add(".dialog-pane");
 
         alert.setHeaderText("How to Play:");
         alert.setContentText(

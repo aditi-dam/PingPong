@@ -1,0 +1,17 @@
+.dialog-pane {
+    -fx-background-color: black;
+    -fx-border-color: red;
+}
+
+.dialog-pane {
+    -fx-background-color: black;
+}
+
+.dialog-pane:header .header-panel {
+    -fx-background-color: black;
+    -fx-text-fill: red;
+}
+
+.button {
+    -fx-background-color: DODGERBLUE;
+}
