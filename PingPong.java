@@ -91,7 +91,7 @@ public class PingPong extends Application{
         private double dx = 1, dy = 1;
         private Circle circle = new Circle(x, y, radius);
         private Timeline animation;
-        private int SPEED = 15;
+        private int SPEED = 10;
         private Pane pane;
     
         public Ball(Pane p){
