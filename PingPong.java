@@ -5,8 +5,13 @@ import javafx.animation.Timeline;
 import javafx.application.Application;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
+import javafx.scene.paint.CycleMethod;
+import javafx.scene.paint.LinearGradient;
+import javafx.scene.paint.Stop;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.Scene;
@@ -16,20 +21,29 @@ public class PingPong extends Application{
     private Stage ps;
     private Button win = new Button("Win");
     private Button lose = new Button("Lose");
-    private Rectangle paddle = new Rectangle(70, 35, Color.BLACK);
+    private Rectangle paddle = new Rectangle(70, 35);
     private Pane pane = new Pane(); 
     
     @Override
     public void start(Stage primaryStage){
         ps = primaryStage;
-        Scene scene = new Scene(pane, 200, 200); 
+        Scene scene = new Scene(pane, 700, 400); 
+
+        pane.setBackground(new Background(new BackgroundFill(Color.BLACK, null, null))); 
+
+        Stop[] stops = new Stop[] { 
+            new Stop(0, Color.DODGERBLUE),  
+            new Stop(1, Color.RED)
+        };  
+        LinearGradient linearGradient = new LinearGradient(0, 0, 1, 0, true, CycleMethod.NO_CYCLE, stops); 
+        paddle.setFill(linearGradient); 
+
         paddle.setX(pane.getWidth()/2);
         paddle.setY(pane.getHeight() - 10);
         paddle.yProperty().bind(pane.heightProperty().subtract(10));
+
         pane.getChildren().add(paddle);
-
         Ball ball = new Ball(pane);
-
 
         scene.setOnKeyPressed(e -> {
             if(e.getCode() == KeyCode.RIGHT){
@@ -77,11 +91,11 @@ public class PingPong extends Application{
         private double dx = 1, dy = 1;
         private Circle circle = new Circle(x, y, radius);
         private Timeline animation;
-        private int SPEED = 15;
+        private int SPEED = 10;
         private Pane pane;
     
         public Ball(Pane p){
-            circle.setFill(Color.GREEN); //Set ball color
+            circle.setFill(Color.WHITE); //Set ball color
             pane = p;
             pane.getChildren().add(circle); //Place a ball into this pane
     
@@ -97,12 +111,15 @@ public class PingPong extends Application{
         }
     
         protected void moveBall(){
-            // Check boundaries
+           if((x >= paddle.getX()) && (x <= paddle.getX() + paddle.getWidth()) && (y + radius >= paddle.getY())){
+                System.out.println("In/on paddle");
+                dy *= -1;
+            }
             if(x < radius || x > pane.getWidth() - radius){
                 dx *= -1;
             }
-            if(y < radius || y > pane.getHeight() - radius){
-                dy *= -1; 
+            if(y < radius){
+                 dy *= -1; 
             }
             x += dx;
             y += dy;
