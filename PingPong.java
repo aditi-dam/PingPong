@@ -5,8 +5,13 @@ import javafx.animation.Timeline;
 import javafx.application.Application;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
+import javafx.scene.paint.CycleMethod;
+import javafx.scene.paint.LinearGradient;
+import javafx.scene.paint.Stop;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.Scene;
@@ -16,13 +21,23 @@ public class PingPong extends Application{
     private Stage ps;
     private Button win = new Button("Win");
     private Button lose = new Button("Lose");
-    private Rectangle paddle = new Rectangle(70, 35, Color.BLACK);
+    private Rectangle paddle = new Rectangle(70, 35);
     private Pane pane = new Pane(); 
     
     @Override
     public void start(Stage primaryStage){
         ps = primaryStage;
         Scene scene = new Scene(pane, 200, 200); 
+
+        pane.setBackground(new Background(new BackgroundFill(Color.BLACK, null, null))); 
+
+        Stop[] stops = new Stop[] { 
+            new Stop(0, Color.DODGERBLUE),  
+            new Stop(1, Color.RED)
+        };  
+        LinearGradient linearGradient = new LinearGradient(0, 0, 1, 0, true, CycleMethod.NO_CYCLE, stops); 
+        paddle.setFill(linearGradient); 
+
         paddle.setX(pane.getWidth()/2);
         paddle.setY(pane.getHeight() - 10);
         paddle.yProperty().bind(pane.heightProperty().subtract(10));
@@ -80,7 +95,7 @@ public class PingPong extends Application{
         private Pane pane;
     
         public Ball(Pane p){
-            circle.setFill(Color.GREEN); //Set ball color
+            circle.setFill(Color.WHITE); //Set ball color
             pane = p;
             pane.getChildren().add(circle); //Place a ball into this pane
     
