@@ -27,7 +27,7 @@ public class PingPong extends Application{
     @Override
     public void start(Stage primaryStage){
         ps = primaryStage;
-        Scene scene = new Scene(pane, 200, 200); 
+        Scene scene = new Scene(pane, 700, 400); 
 
         pane.setBackground(new Background(new BackgroundFill(Color.BLACK, null, null))); 
 
