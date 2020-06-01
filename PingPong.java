@@ -26,10 +26,9 @@ public class PingPong extends Application{
         paddle.setX(pane.getWidth()/2);
         paddle.setY(pane.getHeight() - 10);
         paddle.yProperty().bind(pane.heightProperty().subtract(10));
+
         pane.getChildren().add(paddle);
-
         Ball ball = new Ball(pane);
-
 
         scene.setOnKeyPressed(e -> {
             if(e.getCode() == KeyCode.RIGHT){
@@ -97,15 +96,15 @@ public class PingPong extends Application{
         }
     
         protected void moveBall(){
-            // Check boundaries
+           if((x >= paddle.getX()) && (x <= paddle.getX() + paddle.getWidth()) && (y + radius >= paddle.getY())){
+                System.out.println("In/on paddle");
+                dy *= -1;
+            }
             if(x < radius || x > pane.getWidth() - radius){
                 dx *= -1;
             }
-            if(y < radius || y > pane.getHeight() - radius){
-                dy *= -1; 
-            }
-            if((x >= paddle.getX()) && (x <= paddle.getX() + paddle.getWidth()) && (y == paddle.getY())){
-                //do something to make the ball bounce the opposite way
+            if(y < radius){
+                 dy *= -1; 
             }
             x += dx;
             y += dy;
