@@ -39,7 +39,7 @@ public class WelcomeScreen extends Application{
         text.setFont(Font.font ("Phosphate",65)); 
 
         text2.setFill(linearGradient);
-        text2.setFont(Font.font ("Bradley Hand", 45));
+        text2.setFont(Font.font ("Bradley Hand", 40));
 
         Image image = new Image("unnamed.png", 150, 150, false, false);
 
