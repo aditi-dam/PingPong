@@ -17,6 +17,7 @@ public class InstructionScreen{
         Alert alert = new Alert(AlertType.INFORMATION);
         alert.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
         alert.setResizable(true);
+
         alert.setHeaderText("How to Play:");
         alert.setContentText(
             "Welcome to Ping Pong!\n"+
