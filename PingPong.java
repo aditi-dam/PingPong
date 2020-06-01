@@ -27,7 +27,7 @@ public class PingPong extends Application{
     @Override
     public void start(Stage primaryStage){
         ps = primaryStage;
-        Scene scene = new Scene(pane, 200, 200); 
+        Scene scene = new Scene(pane, 700, 400); 
 
         pane.setBackground(new Background(new BackgroundFill(Color.BLACK, null, null))); 
 
@@ -91,7 +91,7 @@ public class PingPong extends Application{
         private double dx = 1, dy = 1;
         private Circle circle = new Circle(x, y, radius);
         private Timeline animation;
-        private int SPEED = 15;
+        private int SPEED = 10;
         private Pane pane;
     
         public Ball(Pane p){

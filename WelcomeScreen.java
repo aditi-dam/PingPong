@@ -2,6 +2,7 @@ import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.VBox;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.control.Button;
@@ -17,8 +18,10 @@ import javafx.geometry.HPos;
 import javafx.geometry.Pos;
 
 public class WelcomeScreen extends Application{
-    private Text text = new Text("Welcome to Ping Pong"); 
+    private Text text1 = new Text("Welcome to Ping Pong"); 
     private Text text2 = new Text("Are you ready to have some fun?");
+    private Text filler1 = new Text("");
+    private Text filler2 = new Text("");
     private Button next = new Button("Play");
     private Button instructions = new Button("Instructions");
     Stage ps;
@@ -26,7 +29,7 @@ public class WelcomeScreen extends Application{
     @Override
     public void start(Stage primaryStage){
         ps = primaryStage;
-        GridPane gridPane = new GridPane(); 
+        VBox gridPane = new VBox(); 
         
         gridPane.setBackground(new Background(new BackgroundFill(Color.BLACK, null, null)));
 
@@ -35,11 +38,14 @@ public class WelcomeScreen extends Application{
             new Stop(1, Color.RED)
         };  
         LinearGradient linearGradient = new LinearGradient(0, 0, 1, 0, true, CycleMethod.NO_CYCLE, stops); 
-        text.setFill(linearGradient); 
-        text.setFont(Font.font ("Phosphate",65)); 
+        text1.setFill(linearGradient); 
+        text1.setFont(Font.font ("Phosphate",65)); 
 
         text2.setFill(linearGradient);
         text2.setFont(Font.font ("Bradley Hand", 40));
+
+        filler1.setFill(Color.BLACK);
+        filler2.setFill(Color.BLACK);
 
         Image image = new Image("unnamed.png", 150, 150, false, false);
 
@@ -54,17 +60,8 @@ public class WelcomeScreen extends Application{
         instructions.setOnAction(e -> showInstructionsScreen());
 
         gridPane.setAlignment(Pos.CENTER);
-        gridPane.add(text,0,0);
-        gridPane.setVgap(7);
-        gridPane.add(text2, 0, 1);
-        GridPane.setHalignment(text2, HPos.CENTER);
-        gridPane.add(next, 0, 2);
-        GridPane.setHalignment(next, HPos.CENTER);
-        gridPane.add(instructions, 0, 4);
-        GridPane.setHalignment(instructions, HPos.CENTER);
-        gridPane.add(new ImageView(image),0,5);
-        GridPane.setHalignment(new ImageView(image), HPos.CENTER); //The image won't center
-        
+        gridPane.getChildren().addAll(text1, text2, filler1, next, filler2, instructions, new ImageView(image)); 
+
         Scene scene = new Scene(gridPane); 
         ps.setTitle("The Scene is a real Pane");
         ps.setScene(scene); 
