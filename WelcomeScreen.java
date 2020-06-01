@@ -1,20 +1,20 @@
 import javafx.application.Application;
-import javafx.geometry.HPos;
-import javafx.geometry.Pos;
+import javafx.stage.Stage;
+import javafx.scene.Scene;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.stage.Stage;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundFill;
-import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
-import javafx.scene.Scene;
 import javafx.scene.paint.CycleMethod; 
 import javafx.scene.paint.LinearGradient; 
 import javafx.scene.paint.Stop; 
+import javafx.geometry.HPos;
+import javafx.geometry.Pos;
 
 public class WelcomeScreen extends Application{
     private Text text = new Text("Welcome to Ping Pong"); 
