@@ -112,7 +112,6 @@ public class PingPong extends Application{
     
         protected void moveBall(){
            if((x >= paddle.getX()) && (x <= paddle.getX() + paddle.getWidth()) && (y + radius >= paddle.getY())){
-                System.out.println("In/on paddle");
                 dy *= -1;
             }
             if(x < radius || x > pane.getWidth() - radius){
