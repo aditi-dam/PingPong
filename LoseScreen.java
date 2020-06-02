@@ -23,6 +23,9 @@ public class LoseScreen{
         dialogPane.getStylesheets().add(
             getClass().getResource("instructions.css").toExternalForm());
         dialogPane.getStyleClass().add(".dialog-pane2");
+        alert.setTitle("Losing Screen");
+        alert.setHeaderText("Look, an Error Dialog");
+        alert.setContentText("Ooops, there was an error!");
 
         alert.showAndWait();
     }
