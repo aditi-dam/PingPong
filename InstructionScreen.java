@@ -16,6 +16,7 @@ public class InstructionScreen{
  
     public void showInstructions() {
         Alert alert = new Alert(AlertType.INFORMATION);
+        alert.setTitle("Haven't you played this game?");
         alert.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
         alert.setResizable(true);
 
