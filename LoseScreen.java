@@ -10,7 +10,7 @@ public class LoseScreen{
     
     public void showLoseScreen(){
         Alert alert = new Alert(AlertType.ERROR);
-        alert.setTitle("LOSER!!!!!!");
+        alert.setTitle("Losing Screen");
         alert.setHeaderText("Look, an Error Dialog");
         alert.setContentText("Ooops, there was an error!");
 

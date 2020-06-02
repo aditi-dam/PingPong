@@ -53,6 +53,7 @@ public class Ball{
             ps.close();
             LoseScreen game = new LoseScreen();
             game.start(ps);
+
         }
         circle.setCenterX(x);
         circle.setCenterY(y);
