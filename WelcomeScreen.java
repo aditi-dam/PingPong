@@ -1,7 +1,6 @@
 import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
-import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
@@ -14,7 +13,6 @@ import javafx.scene.text.Text;
 import javafx.scene.paint.CycleMethod; 
 import javafx.scene.paint.LinearGradient; 
 import javafx.scene.paint.Stop; 
-import javafx.geometry.HPos;
 import javafx.geometry.Pos;
 
 public class WelcomeScreen extends Application{
