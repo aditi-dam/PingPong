@@ -1,10 +1,8 @@
 import javafx.application.Application;
-import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.CycleMethod;
@@ -16,7 +14,6 @@ import javafx.scene.input.KeyCode;
 import java.io.File;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
-import javafx.scene.media.MediaView;
 
 public class PingPong extends Application{
     private Stage ps;
@@ -32,25 +29,13 @@ public class PingPong extends Application{
 
         pane.setBackground(new Background(new BackgroundFill(Color.BLACK, null, null)));
         
-        Media media = new Media("song.mp3");
-        MediaPlayer mediaPlayer = new MediaPlayer(media); 
+        String source = new File("song.mp3").toURI().toString();
+        Media media = null;
+        media = new Media(source);
+        MediaPlayer mediaPlayer = new MediaPlayer(media);
+        System.out.println("going to play");
         mediaPlayer.play();
-        //MediaView mediaView = new MediaView(mediaPlayer);
-
-        // Button playButton = new Button(">");
-        // playButton.setOnAction(e -> {
-        //     if (playButton.getText().equals(">")) {
-        //         mediaPlayer.play();
-        //         playButton.setText("||");
-        //     } else {
-        //         mediaPlayer.pause();
-        //         playButton.setText(">");
-        //     }
-        // });
-
-        // HBox hBox = new HBox(10);
-        // hBox.setAlignment(Pos.TOP_LEFT);
-        // hBox.getChildren().addAll(playButton);
+        System.out.println("playing");
 
         Stop[] stops = new Stop[] { 
             new Stop(0, Color.DODGERBLUE),  
