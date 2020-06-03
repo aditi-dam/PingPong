@@ -1,5 +1,8 @@
+import javafx.application.Platform;
 import javafx.scene.control.Alert;
+import javafx.scene.control.DialogPane;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.layout.Region;
 import javafx.stage.Stage;
 
 public class LoseScreen{
@@ -14,6 +17,6 @@ public class LoseScreen{
         alert.setHeaderText("Look, an Error Dialog");
         alert.setContentText("Ooops, there was an error!");
 
-        alert.showAndWait();
+        Platform.runLater(alert::showAndWait);
     }
 }
