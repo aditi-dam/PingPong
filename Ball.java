@@ -50,8 +50,9 @@ public class Ball{
         x += dx;
         y += dy;
         if(y > pane.getHeight()){
-            ps.close();
+            y = 0;
             LoseScreen game = new LoseScreen();
+            ps.close();
             game.start(ps);
 
         }
