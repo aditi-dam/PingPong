@@ -33,7 +33,9 @@ public class PingPong extends Application{
         Media media = null;
         media = new Media(source);
         MediaPlayer mediaPlayer = new MediaPlayer(media);
+        System.out.println("going to play");
         mediaPlayer.play();
+        System.out.println("playing");
 
         Stop[] stops = new Stop[] { 
             new Stop(0, Color.DODGERBLUE),  
