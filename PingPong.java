@@ -11,6 +11,9 @@ import javafx.scene.paint.Stop;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.Scene;
 import javafx.scene.input.KeyCode;
+import java.io.File;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 
 public class PingPong extends Application{
     private Stage ps;
@@ -24,7 +27,13 @@ public class PingPong extends Application{
         ps = primaryStage;
         Scene scene = new Scene(pane, 700, 400); 
 
-        pane.setBackground(new Background(new BackgroundFill(Color.BLACK, null, null))); 
+        pane.setBackground(new Background(new BackgroundFill(Color.BLACK, null, null)));
+        
+        String source = new File("song.mp3").toURI().toString();
+        Media media = null;
+        media = new Media(source);
+        MediaPlayer mediaPlayer = new MediaPlayer(media);
+        mediaPlayer.play();
 
         Stop[] stops = new Stop[] { 
             new Stop(0, Color.DODGERBLUE),  
