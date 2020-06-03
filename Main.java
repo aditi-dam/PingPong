@@ -1,31 +1,33 @@
-import java.nio.file.Paths;
-
-import javafx.application.Application;
-import javafx.scene.Scene;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer; 
-import javafx.stage.Stage;
-
-public class Main extends Application {
-   @Override
-   public void start(Stage stage) throws Exception {
-        String s = "song.mp3";
-        Media h = new Media(Paths.get(s).toUri().toString()); 
-        MediaPlayer mediaPlayer = new MediaPlayer(h);
-        mediaPlayer.play();
-       BorderPane pane = new BorderPane();
-       Scene scene = new Scene(pane, 600, 400);
-       stage.setScene(scene);
-       stage.setTitle("Playing music with JavaFX");
-       stage.show();
-   }  
-
-//    private MediaPlayer mediaPlayer; 
-//    public void music() {
-//        String s = "song.mp3";
-//        Media h = new Media(Paths.get(s).toUri().toString()); 
-//        mediaPlayer = new MediaPlayer(h);
-//        mediaPlayer.play();
-//    }
- }
+import java.io.File;  
+  
+import javafx.application.Application;  
+import javafx.scene.Group;  
+import javafx.scene.media.Media;  
+import javafx.scene.media.MediaPlayer;  
+import javafx.scene.media.MediaView;  
+import javafx.stage.Stage;  
+public class Main extends Application  
+{  
+  
+    @Override  
+    public void start (Stage primaryStage) throws Exception {  
+        // TODO Auto-generated method stub  
+        //Initialising path of the media file, replace this with your file path   
+        String path = "/song.mp3";  
+          
+        //Instantiating Media class  
+        Media media = new Media(new File(path).toURI().toString());  
+          
+        //Instantiating MediaPlayer class   
+        MediaPlayer mediaPlayer = new MediaPlayer(media);  
+          
+        //by setting this property to true, the audio will be played   
+        mediaPlayer.setAutoPlay(true);  
+        primaryStage.setTitle("Playing Audio");  
+        primaryStage.show();  
+    }  
+   //  public static void main(String[] args) {  
+   //      launch(args);  
+   //  }  
+      
+}  
