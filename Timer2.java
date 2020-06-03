@@ -1,4 +1,5 @@
 import java.util.TimerTask;
+import java.util.Timer;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -9,11 +10,9 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-// import java.time.Duration;
-import java.util.Timer;
 
 public class Timer2 extends Application{
-    private int x=100;
+    private int x = 100;
     private Label label;
     private Pane pane = new Pane();
     private int SPEED = 10;
@@ -28,14 +27,11 @@ public class Timer2 extends Application{
         ps.show();
     }
 
-    public void timer(){        
+    public void timer() {        
         Timeline animation = new Timeline(
             new KeyFrame(Duration.millis(SPEED), e->countDown()));
         animation.setCycleCount(Timeline.INDEFINITE);
         animation.play();
-            }
-        } , 0, 1000);
-
     }
 
     public void countDown(){
