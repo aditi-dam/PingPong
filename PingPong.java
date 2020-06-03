@@ -30,8 +30,7 @@ public class PingPong extends Application{
         pane.setBackground(new Background(new BackgroundFill(Color.BLACK, null, null)));
         
         String source = new File("song.mp3").toURI().toString();
-        Media media = null;
-        media = new Media(source);
+        Media media = new Media(source);
         MediaPlayer mediaPlayer = new MediaPlayer(media);
         System.out.println("going to play");
         mediaPlayer.play();
@@ -91,3 +90,4 @@ public class PingPong extends Application{
        }
     }
 }
+
