@@ -7,8 +7,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
-import java.time.Duration;
+// import java.time.Duration;
 import java.util.Timer;
 
 public class Timer2 extends Application{
