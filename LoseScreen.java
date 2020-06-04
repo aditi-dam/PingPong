@@ -23,7 +23,7 @@ public class LoseScreen{
         DialogPane dialogPane = alert.getDialogPane();
         dialogPane.getStylesheets().add(
             getClass().getResource("lose.css").toExternalForm());
-        dialogPane.getStyleClass().add(".dialog-pane2");
+        dialogPane.getStyleClass().add(".dialog-pane");
 
         Platform.runLater(alert::showAndWait);
     }
