@@ -15,14 +15,14 @@ public class LoseScreen{
         Alert alert = new Alert(AlertType.ERROR);
         alert.setTitle("LOSER!!!!!!");
         alert.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
-        
+
         alert.setHeaderText("You lost.");
         alert.setContentText("Looks like you failed to hit the ball. "+
         "If only you were faster."+" Better luck next time!");
 
         DialogPane dialogPane = alert.getDialogPane();
         dialogPane.getStylesheets().add(
-            getClass().getResource("instructions.css").toExternalForm());
+            getClass().getResource("lose.css").toExternalForm());
         dialogPane.getStyleClass().add(".dialog-pane2");
 
         Platform.runLater(alert::showAndWait);
