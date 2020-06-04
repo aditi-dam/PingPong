@@ -18,7 +18,7 @@ public class LoseScreen{
         
         alert.setHeaderText("You lost.");
         alert.setContentText("Looks like you failed to hit the ball. "+
-        "And it wasn't a minute yet."+" Better luck next time!");
+        "If only you were faster."+" Better luck next time!");
 
         DialogPane dialogPane = alert.getDialogPane();
         dialogPane.getStylesheets().add(
