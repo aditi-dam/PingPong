@@ -33,7 +33,7 @@ public class InstructionScreen{
             "\nClick 'Next' to start the real game. \nUse your paddle to keep the ball from "+
             "getting past you as it bounces off the walls. Can you do it until time runs out? "+
             "\nIf you succeed, you'll be a Ping Pong champion! \nReady? Let's play!");
- 
+
         ButtonType backToWelcomeScreen = new ButtonType("Return to Welcome Screen");
   
         alert.getButtonTypes().setAll(backToWelcomeScreen);

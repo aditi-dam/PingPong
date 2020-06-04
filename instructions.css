@@ -1,6 +1,6 @@
 .dialog-pane {
     -fx-background-color: black;
-    -fx-border-color: red;
+    -fx-border-color: linear-gradient(red, DODGERBLUE);
     -fx-border-width: 3;
 }
 
@@ -17,3 +17,4 @@
     -fx-text-fill: white;
     -fx-background-color: DODGERBLUE;
 }
+
