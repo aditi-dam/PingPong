@@ -1,13 +1,11 @@
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
-import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.geometry.Pos;
 import javafx.scene.Group;
-import javafx.scene.Scene;
 import javafx.scene.control.Label;
-import javafx.scene.layout.HBox; 
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.CycleMethod;
 import javafx.scene.paint.LinearGradient;
@@ -16,15 +14,14 @@ import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.util.Duration; 
 
-public class Clock extends Application{
+public class Clock extends HBox{
     private final Integer startTime = 60; 
     private Integer seconds = startTime; 
     private Label label; 
-
-    @Override
-    public void start(Stage windows) throws Exception {
+    
+    public void start(Stage windows) throws Exception { //extends pane
         
-        Group root = new Group(); 
+        //Group root = new Group(); 
         label = new Label();
         Stop[] stops = new Stop[] { 
             new Stop(0, Color.DODGERBLUE),  
@@ -34,15 +31,12 @@ public class Clock extends Application{
         //label.setFill(linearGradient); 
         label.setFont(Font.font ("Phosphate",50)); 
         label.setTextFill(linearGradient); 
-        HBox layout = new HBox(5); 
-        layout.getChildren().add(label);
-        layout.setLayoutX(10);
-        root.getChildren().add(layout);
+        //HBox layout = new HBox(5); 
+        getChildren().add(label);
+        setLayoutX(10);
+        //root.getChildren().add();
         doTime();
         
-        windows.setScene(new Scene(root,400,90,Color.BLACK));
-        windows.setTitle("Countdown Timer");
-        windows.show();
     }
 
     private void doTime(){

@@ -5,6 +5,7 @@ import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
+import javafx.scene.layout.HBox;
 import javafx.scene.paint.CycleMethod;
 import javafx.scene.paint.LinearGradient;
 import javafx.scene.paint.Stop;
@@ -17,15 +18,17 @@ import javafx.scene.media.MediaPlayer;
  
 public class PingPong extends Application{
     private Stage ps;
+    private Stage clockStage;
     private Button win = new Button("Win");
     private Button lose = new Button("Lose");
     private Rectangle paddle = new Rectangle(70, 35);
     private Pane pane = new Pane(); 
+    private HBox clock = new Clock();
     
     @Override
     public void start(Stage primaryStage){
         ps = primaryStage;
-        Scene scene = new Scene(pane, 700, 400); 
+        Scene scene = new Scene(pane, 700, 400);
  
         pane.setBackground(new Background(new BackgroundFill(Color.BLACK, null, null)));
         
@@ -58,13 +61,17 @@ public class PingPong extends Application{
             }
         });
  
-        win.setOnAction(e -> win());
-        lose.setOnAction(e -> lose());
- 
-        
+        // win.setOnAction(e -> win());
+        // lose.setOnAction(e -> lose());
+
         ps.setTitle("Shouldn't there be a game here?");
         ps.setScene(scene);
         ps.show();
+
+        Scene clockScene = new Scene(clock, 700, 400);
+        clockStage.setTitle("Clock");
+        clockStage.setScene(clockScene);
+        clockStage.show();
     }
  
     public void win(){
