@@ -1,6 +1,7 @@
 import javafx.application.Application;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.Pane;
@@ -36,6 +37,7 @@ public class PingPong extends Application{
         Media media = null;
         media = new Media(source);
         MediaPlayer mediaPlayer = new MediaPlayer(media);
+        mediaPlayer.setStartTime(new Duration(0));
         mediaPlayer.play();
  
         Stop[] stops = new Stop[] { 
