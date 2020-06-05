@@ -16,9 +16,16 @@ public class WinScreen{
     
     public void showWinScreen(){
         Alert alert = new Alert(AlertType.CONFIRMATION);
-        alert.setTitle("Confirmation Dialog with Custom Actions");
-        alert.setHeaderText("Look, a Confirmation Dialog with Custom Actions");
-        alert.setContentText("Choose your option.");
+
+        DialogPane dialogPane = alert.getDialogPane();
+        dialogPane.getStylesheets().add(
+            getClass().getResource("win.css").toExternalForm());
+        dialogPane.getStyleClass().add(".dialog-pane");
+
+        alert.setTitle("Nice reflexes.");
+        alert.setHeaderText("Hey, you won!");
+        alert.setContentText("You were able to keep the ball in check. Good job! "+
+                            "You're now a Ping Pong winner. Want to play again?");
     
         ButtonType playAgain = new ButtonType("Play Again");
         ButtonType buttonTypeCancel = new ButtonType("Cancel", ButtonData.CANCEL_CLOSE);
