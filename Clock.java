@@ -31,10 +31,10 @@ public class Clock extends HBox{
         //label.setFill(linearGradient); 
         label.setFont(Font.font ("Phosphate",50)); 
         label.setTextFill(linearGradient); 
-        //HBox layout = new HBox(5); 
-        getChildren().add(label);
-        setLayoutX(10);
-        //root.getChildren().add();
+        // HBox layout = new HBox(5); 
+        this.getChildren().add(label);
+        // layout.setLayoutX(10);
+        //root.getChildren().add(layout);
         doTime();
         
     }

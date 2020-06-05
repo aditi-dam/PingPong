@@ -19,12 +19,11 @@ import javafx.scene.media.MediaPlayer;
  
 public class PingPong extends Application{
     private Stage ps;
-    private Stage clockStage;
     private Button win = new Button("Win");
     private Button lose = new Button("Lose");
     private Rectangle paddle = new Rectangle(70, 35);
     private Pane pane = new Pane(); 
-    private HBox clock = new Clock();
+
     
     @Override
     public void start(Stage primaryStage){
@@ -66,14 +65,12 @@ public class PingPong extends Application{
         // win.setOnAction(e -> win());
         // lose.setOnAction(e -> lose());
 
+        drawClock();
+
         ps.setTitle("Shouldn't there be a game here?");
         ps.setScene(scene);
         ps.show();
 
-        Scene clockScene = new Scene(clock, 700, 400);
-        clockStage.setTitle("Clock");
-        clockStage.setScene(clockScene);
-        clockStage.show();
     }
  
     public void win(){
@@ -96,5 +93,14 @@ public class PingPong extends Application{
        if(paddle.getX() > pane.getWidth()-paddle.getWidth()){
             paddle.setX(pane.getWidth() - paddle.getWidth());
        }
+    }
+    
+    public void drawClock(){
+        Stage clockStage = new Stage();
+        HBox clock = new Clock();
+        Scene clockScene = new Scene(clock, 700, 400);
+        clockStage.setTitle("Clock");
+        clockStage.setScene(clockScene);
+        clockStage.show();
     }
 }
