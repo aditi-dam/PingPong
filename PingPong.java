@@ -1,5 +1,6 @@
 import javafx.application.Application;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import javafx.scene.layout.Background;
@@ -101,6 +102,9 @@ public class PingPong extends Application{
         Scene clockScene = new Scene(clock, 700, 400);
         clockStage.setTitle("Clock");
         clockStage.setScene(clockScene);
+        clockStage.setX(ps.getX()+ ps.getWidth() + 30);
+        clockStage.setY(ps.getY());
         clockStage.show();
     }
 }
+
