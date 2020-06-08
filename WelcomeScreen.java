@@ -16,9 +16,8 @@ import javafx.scene.paint.Stop;
 import javafx.geometry.Pos;
 import java.lang.reflect.Method;
 
-
-
-public class WelcomeScreen extends Application{
+public class WelcomeScreen extends VBox{
+    private PingPongManager pingPongManager;
     private Text text1 = new Text("Welcome to Ping Pong"); 
     private Text text2 = new Text("Are you ready to have some fun?");
     private Text filler1 = new Text("");
@@ -27,7 +26,7 @@ public class WelcomeScreen extends Application{
     private Button instructions = new Button("Instructions");
     private Method showInstructionsScreen();
     Stage ps;
-
+    
     public WelcomeScreen(Method s()){
         showInstructionsScreen() = s();
     }
