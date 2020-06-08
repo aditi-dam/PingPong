@@ -10,10 +10,13 @@ import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
-import javafx.scene.paint.CycleMethod; 
-import javafx.scene.paint.LinearGradient; 
-import javafx.scene.paint.Stop; 
+import javafx.scene.paint.CycleMethod;
+import javafx.scene.paint.LinearGradient;
+import javafx.scene.paint.Stop;
 import javafx.geometry.Pos;
+import java.lang.reflect.Method;
+
+
 
 public class WelcomeScreen extends Application{
     private Text text1 = new Text("Welcome to Ping Pong"); 
@@ -23,7 +26,7 @@ public class WelcomeScreen extends Application{
     private Button next = new Button("Play");
     private Button instructions = new Button("Instructions");
     Stage ps;
-    
+
     @Override
     public void start(Stage primaryStage){
         ps = primaryStage;
@@ -67,7 +70,7 @@ public class WelcomeScreen extends Application{
 
     }
 
-    public void showNextScreen(){
+    public void showNext(){
         ps.close();
         PingPong game = new PingPong();
         game.start(ps);
