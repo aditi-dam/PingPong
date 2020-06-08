@@ -25,7 +25,12 @@ public class WelcomeScreen extends Application{
     private Text filler2 = new Text("");
     private Button next = new Button("Play");
     private Button instructions = new Button("Instructions");
+    private Method showInstructionsScreen();
     Stage ps;
+
+    public WelcomeScreen(Method s()){
+        showInstructionsScreen() = s();
+    }
 
     @Override
     public void start(Stage primaryStage){
@@ -76,9 +81,9 @@ public class WelcomeScreen extends Application{
         game.start(ps);
     }
 
-    public void showInstructionsScreen(){
-        ps.close();
-        InstructionScreen game = new InstructionScreen();
-        game.start(ps);
-    }
+    // public void showInstructionsScreen(){
+    //     ps.close();
+    //     InstructionScreen game = new InstructionScreen();
+    //     game.start(ps);
+    // }
 }
