@@ -113,4 +113,3 @@ public class PingPong extends Application{
         clockStage.show();
     }
 }
-

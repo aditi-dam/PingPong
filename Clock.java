@@ -17,10 +17,10 @@ import javafx.util.Duration;
 public class Clock extends HBox{
     private final Integer startTime = 60; 
     private Integer seconds = startTime; 
-    private Label label; 
+    public Label label; 
 
     
-    public void start(Stage windows) throws Exception { //extends pane
+    public Clock() { //extends pane
         
         //Group root = new Group(); 
         label = new Label();
