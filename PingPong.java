@@ -22,14 +22,12 @@ import javafx.scene.Scene;
 import javafx.scene.input.KeyCode;
  
 public class PingPong extends Application{
-    private Integer startTime = 60; 
-    private Integer seconds = startTime; 
-    private Label label; 
+
     private Stage ps;
-    private Button win = new Button("Win");
-    private Button lose = new Button("Lose");
     private Rectangle paddle = new Rectangle(70, 35);
     private Pane pane = new Pane(); 
+    private HBox clock;
+    private Stage clockStage;
 
     
     @Override
@@ -58,7 +56,7 @@ public class PingPong extends Application{
         paddle.yProperty().bind(pane.heightProperty().subtract(10));
  
         pane.getChildren().add(paddle);
-        Ball ball = new Ball(pane, paddle, ps);
+        Ball ball = new Ball(pane, paddle, ps, clockStage);
  
         scene.setOnKeyPressed(e -> {
             if(e.getCode() == KeyCode.RIGHT){
@@ -103,8 +101,8 @@ public class PingPong extends Application{
     }
     
     public void drawClock(){
-        Stage clockStage = new Stage();
-        HBox clock = new Clock();
+        clockStage = new Stage();
+        clock = new Clock();
         Scene clockScene = new Scene(clock, 700, 400);
         clockStage.setTitle("Clock");
         clockStage.setScene(clockScene);

@@ -18,12 +18,14 @@ public class Ball{
     private Pane pane;
     private Rectangle paddle;
     private Stage ps;
+    private Stage clockStage;
     
-    public Ball(Pane p, Rectangle q, Stage primaryStage){
+    public Ball(Pane p, Rectangle q, Stage primaryStage, Stage cs){
         circle.setFill(Color.WHITE); //Set ball color
         pane = p;
         paddle = q;
         ps = primaryStage;
+        clockStage = cs;
         pane.getChildren().add(circle); //Place a ball into this pane
     
         //Create an animation for moving the ball
@@ -54,6 +56,7 @@ public class Ball{
             LoseScreen game = new LoseScreen();
             ps.close();
             game.start(ps);
+            //clockStage.close();
 
         }
         circle.setCenterX(x);
