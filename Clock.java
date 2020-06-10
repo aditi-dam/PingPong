@@ -32,7 +32,6 @@ public class Clock extends HBox{
         LinearGradient linearGradient = new LinearGradient(0, 0, 1, 0, true, CycleMethod.NO_CYCLE, stops); 
         //label.setFill(linearGradient);
         
-        //setBackground(new Background(new BackgroundFill(Color.BLACK, null, null)));
         setStyle("-fx-background-color: black");
         label.setFont(Font.font ("Phosphate",50)); 
         label.setTextFill(linearGradient); 
