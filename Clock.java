@@ -5,7 +5,6 @@ import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.CycleMethod;
 import javafx.scene.paint.LinearGradient;
@@ -29,7 +28,9 @@ public class Clock extends HBox{
             new Stop(1, Color.RED)
         };  
         LinearGradient linearGradient = new LinearGradient(0, 0, 1, 0, true, CycleMethod.NO_CYCLE, stops); 
-        //label.setFill(linearGradient); 
+        //label.setFill(linearGradient);
+        
+        setStyle("-fx-background-color: black");
         label.setFont(Font.font ("Phosphate",50)); 
         label.setTextFill(linearGradient); 
         // HBox layout = new HBox(5); 
