@@ -4,6 +4,8 @@ import javafx.scene.Scene;
 import javafx.scene.layout.VBox;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -14,9 +16,8 @@ import javafx.scene.paint.CycleMethod;
 import javafx.scene.paint.LinearGradient;
 import javafx.scene.paint.Stop;
 import javafx.geometry.Pos;
-import java.lang.reflect.Method;
 
-public class WelcomeScreen extends Application{
+public class WelcomeScreen extends VBox{
     private PingPongManager pingPongManager;
     private Text text1 = new Text("Welcome to Ping Pong"); 
     private Text text2 = new Text("Are you ready to have some fun?");
@@ -26,12 +27,10 @@ public class WelcomeScreen extends Application{
     private Button instructions = new Button("Instructions");
     Stage ps;
     
-    @Override
-    public void start(Stage primaryStage){
-        ps = primaryStage;
-        VBox gridPane = new VBox(); 
+    public WelcomeScreen(PingPongManager pingPongManager){
+        super(); 
         
-        gridPane.setBackground(new Background(new BackgroundFill(Color.BLACK, null, null)));
+        this.setBackground(new Background(new BackgroundFill(Color.BLACK, null, null)));
 
         Stop[] stops = new Stop[] { 
             new Stop(0, Color.DODGERBLUE),  
@@ -56,28 +55,30 @@ public class WelcomeScreen extends Application{
         instructions.setFont(Font.font("Marker Felt", 20));
         //instructions.setStyle("-fx-font-size:20");
 
-        next.setOnAction(e -> showNextScreen());
+        //next.setOnAction(e -> showNextScreen());
         instructions.setOnAction(e -> showInstructionsScreen());
 
-        gridPane.setAlignment(Pos.CENTER);
-        gridPane.getChildren().addAll(text1, text2, filler1, next, filler2, instructions, new ImageView(image)); 
+        this.setAlignment(Pos.CENTER);
+        this.getChildren().addAll(text1, text2, filler1, next, filler2, instructions, new ImageView(image)); 
 
-        Scene scene = new Scene(gridPane); 
-        ps.setTitle("The Scene is a real Pane");
-        ps.setScene(scene); 
-        ps.show();
+        // Scene scene = new Scene(gridPane); 
+        // ps.setTitle("The Scene is a real Pane");
+        // ps.setScene(scene); 
+        // ps.show();
 
     }
 
-    public void showNextScreen(){
-        ps.close();
-        PingPong game = new PingPong();
-        game.start(ps);
+    private void showInstructionsScreen(){
+        // ps.close();
+        // PingPong game = new PingPong();
+        // game.start(ps);
+        pingPongManager.showInstructionsScreen();
     }
 
-    public void showInstructionsScreen(){
-        ps.close();
-        InstructionScreen game = new InstructionScreen();
-        game.start(ps);
-    }
+    //public void showNextScreen(){
+    // //     ps.close();
+    // //     InstructionScreen game = new InstructionScreen();
+    // //     game.start(ps);
+    // // 
+    // }
 }

@@ -36,7 +36,7 @@ public class PingPongManager extends Application {
         //screenB = new ScreenB(this);
 
         //Creates a Scene with screenA as the "root".
-        Scene scene = new Scene(welcomeScreen, 300, 200);
+        Scene scene = new Scene(welcomeScreen);
         //Put the scene in the Stage (aka window)
         primaryStage.setTitle("Multi-screen Demo");
         primaryStage.setScene(scene);
@@ -71,16 +71,18 @@ public class PingPongManager extends Application {
      * See the 3 commented lines with NOTE above them
      * 
      */
-    public void showScreenB(){
+    public void showInstructionsScreen(){
         //This is the scene we set before.
+        System.out.println("Hi");
         Scene scene = primaryStage.getScene();
 
         //Change the "root" to be a *new* screenA, which we've never changed;
-        scene.setRoot(new ScreenB(this));
+        scene.setRoot(new InstructionScreen(this));
 
         //NOTE: You could save screenB too, if you wanted to keep changes between switches
-        //scene.setRoot(screenB);
+        //cene.setRoot(screenB);
     }
+
 
     public static void main(String[] args) {
         launch(args);
