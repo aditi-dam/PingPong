@@ -3,9 +3,12 @@ import java.io.File;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Application;
+import javafx.application.Platform;
+import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 import javafx.util.Duration;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
@@ -71,6 +74,7 @@ public class PingPong extends Application{
         // lose.setOnAction(e -> lose());
 
         drawClock();
+        // Platform.exit() --> just closes everything
 
         ps.setTitle("Shouldn't there be a game here?");
         ps.setScene(scene);
@@ -80,13 +84,15 @@ public class PingPong extends Application{
  
     public void win(){
         ps.close();
+        clockStage.close();
         WinScreen game = new WinScreen();
         game.start(ps);
     }
  
     public void lose(){
         ps.close();
-        LoseScreen game = new LoseScreen();
+        clockStage.close();
+        LoseScreen game = new LoseScreen(clockStage);
         game.start(ps);
     }
  

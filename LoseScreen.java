@@ -7,6 +7,10 @@ import javafx.stage.Stage;
 
 public class LoseScreen{
     
+    public LoseScreen(Stage clockStage) {
+        clockStage.close();
+    }
+
     public void start(Stage primaryStage){
         showLoseScreen();
     }
