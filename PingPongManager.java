@@ -34,10 +34,18 @@ public class PingPongManager extends Application {
 
         Stage clockStage = new Stage();
         HBox clock = new Clock(this, clockStage);
+<<<<<<< HEAD
         Scene clockScene = new Scene(clock, 400, 100);
         clockStage.setTitle("Clock");
         clockStage.setScene(clockScene);
         clock.setAlignment(Pos.CENTER);
+=======
+        clockStage.setWidth(400);
+        clockStage.setHeight(120);
+        Scene clockScene = new Scene(clock, 700, 400);
+        clockStage.setTitle("Clock");
+        clockStage.setScene(clockScene);
+>>>>>>> c9db11694dbc0e515440b6e23b73c3c37b27880a
         clockStage.setX(primaryStage.getX()+ primaryStage.getWidth() - 550);
         clockStage.setY(primaryStage.getY()+450);
         clockStage.show();
