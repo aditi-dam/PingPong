@@ -21,6 +21,7 @@ public class PingPong extends Pane{
     private Rectangle paddle = new Rectangle(70, 35);
     private Stage clockStage;
     private PingPongManager pingPongManager;
+    private Scene scene;
 
     
     public PingPong(PingPongManager p, Scene s, Stage cs){
