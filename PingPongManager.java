@@ -1,4 +1,5 @@
 import javafx.application.Application;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
@@ -33,11 +34,12 @@ public class PingPongManager extends Application {
 
         Stage clockStage = new Stage();
         HBox clock = new Clock(this, clockStage);
-        Scene clockScene = new Scene(clock, 700, 400);
+        Scene clockScene = new Scene(clock, 400, 100);
         clockStage.setTitle("Clock");
         clockStage.setScene(clockScene);
-        clockStage.setX(primaryStage.getX()+ primaryStage.getWidth() + 30);
-        clockStage.setY(primaryStage.getY());
+        clock.setAlignment(Pos.CENTER);
+        clockStage.setX(primaryStage.getX()+ primaryStage.getWidth() - 550);
+        clockStage.setY(primaryStage.getY()+450);
         clockStage.show();
 
         playScreen = new PingPong(this, scene, clockStage);
