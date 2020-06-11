@@ -2,7 +2,6 @@ import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.scene.Group;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
@@ -20,7 +19,7 @@ public class Clock extends HBox{
     private PingPongManager pingPongManager;
     private Stage clockStage;
     
-    public Clock(PingPongManager p, Stage cs) { //extends pane
+    public Clock(PingPongManager p, Stage cs) {
         pingPongManager = p;
         clockStage = cs;
 

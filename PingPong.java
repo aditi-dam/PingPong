@@ -1,14 +1,6 @@
 import java.io.File;
 
-import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
-import javafx.application.Application;
-import javafx.application.Platform;
-import javafx.event.EventHandler;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.stage.Stage;
-import javafx.stage.WindowEvent;
 import javafx.util.Duration;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
@@ -16,7 +8,6 @@ import javafx.scene.layout.Pane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
-import javafx.scene.layout.HBox;
 import javafx.scene.paint.CycleMethod;
 import javafx.scene.paint.LinearGradient;
 import javafx.scene.paint.Stop;
@@ -28,10 +19,8 @@ public class PingPong extends Pane{
 
     private Stage ps;
     private Rectangle paddle = new Rectangle(70, 35);
-    //private Pane pane = new Pane(); 
     private Stage clockStage;
     private PingPongManager pingPongManager;
-    private Scene scene;
 
     
     public PingPong(PingPongManager p, Scene s, Stage cs){

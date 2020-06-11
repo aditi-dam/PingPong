@@ -23,18 +23,17 @@ public class Ball{
     
     public Ball(Pane p, Rectangle q, Stage primaryStage, Stage cs, PingPongManager pp){
         pingPongManager = pp;
-        circle.setFill(Color.WHITE); //Set ball color
+        circle.setFill(Color.WHITE); 
         pane = p;
         paddle = q;
         ps = primaryStage;
         clockStage = cs;
-        pane.getChildren().add(circle); //Place a ball into this pane
-    
-        //Create an animation for moving the ball
+        pane.getChildren().add(circle);
+
         animation = new Timeline(
             new KeyFrame(Duration.millis(SPEED), e->moveBall()));
         animation.setCycleCount(Timeline.INDEFINITE);
-        animation.play(); //Start animation
+        animation.play();
     }
     
     public void play(){
