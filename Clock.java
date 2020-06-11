@@ -13,7 +13,7 @@ import javafx.stage.Stage;
 import javafx.util.Duration; 
 
 public class Clock extends HBox{
-    private final Integer startTime = 60; 
+    private final Integer startTime = 10; 
     private Integer seconds = startTime; 
     public Label label; 
     private PingPongManager pingPongManager;

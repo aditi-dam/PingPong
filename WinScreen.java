@@ -4,6 +4,7 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.DialogPane;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ButtonBar.ButtonData;
+import javafx.scene.layout.Region;
 import javafx.stage.Stage;
 
 
@@ -17,6 +18,8 @@ public class WinScreen{
     
     public void showWinScreen(){
         Alert alert = new Alert(AlertType.CONFIRMATION);
+        alert.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
+        alert.setResizable(true);
 
         DialogPane dialogPane = alert.getDialogPane();
         dialogPane.getStylesheets().add(
