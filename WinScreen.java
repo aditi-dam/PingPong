@@ -1,4 +1,6 @@
 import java.util.Optional;
+
+import javafx.application.Platform;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.DialogPane;
@@ -33,13 +35,7 @@ public class WinScreen{
     
         alert.getButtonTypes().setAll(playAgain, buttonTypeCancel);
     
-        Optional<ButtonType> result = alert.showAndWait();
-        if (result.get() == playAgain){
-            WelcomeScreen game = new WelcomeScreen(); 
-            game.start(ps);
-        } else {
-            // ... user chose CANCEL or closed the dialog
-        }
+       Platform.runLater(alert::showAndWait);
     }
 
 }

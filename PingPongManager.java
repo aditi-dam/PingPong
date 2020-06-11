@@ -83,7 +83,7 @@ public class PingPongManager extends Application {
         //NOTE: You could save screenB too, if you wanted to keep changes between switches
         //Scene.setRoot(screenB);
         Stage clockStage = new Stage();
-        HBox clock = new Clock();
+        HBox clock = new Clock(this, clockStage);
         Scene clockScene = new Scene(clock, 700, 400);
         clockStage.setTitle("Clock");
         clockStage.setScene(clockScene);

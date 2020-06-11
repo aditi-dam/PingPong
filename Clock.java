@@ -17,26 +17,24 @@ public class Clock extends HBox{
     private final Integer startTime = 60; 
     private Integer seconds = startTime; 
     public Label label; 
-
+    private PingPongManager pingPongManager;
+    private Stage clockStage;
     
-    public Clock() { //extends pane
-        
-        //Group root = new Group(); 
+    public Clock(PingPongManager p, Stage cs) { //extends pane
+        pingPongManager = p;
+        clockStage = cs;
+
         label = new Label();
         Stop[] stops = new Stop[] { 
             new Stop(0, Color.DODGERBLUE),  
             new Stop(1, Color.RED)
         };  
         LinearGradient linearGradient = new LinearGradient(0, 0, 1, 0, true, CycleMethod.NO_CYCLE, stops); 
-        //label.setFill(linearGradient);
         
         setStyle("-fx-background-color: black");
         label.setFont(Font.font ("Phosphate",50)); 
         label.setTextFill(linearGradient); 
-        // HBox layout = new HBox(5); 
         this.getChildren().add(label);
-        // layout.setLayoutX(10);
-        //root.getChildren().add(layout);
         doTime();
         
     }
@@ -55,6 +53,11 @@ public class Clock extends HBox{
                 label.setText("Countdown: " + seconds.toString());
                     if(seconds<=0){
                         time.stop();
+                        Stage ps = new Stage();
+                        WinScreen game = new WinScreen();
+                        game.start(ps);
+                        clockStage.close();
+                        pingPongManager.gameOver();
                     }
             }
         });
