@@ -25,10 +25,10 @@ public class WelcomeScreen extends VBox{
     private Text filler2 = new Text("");
     private Button next = new Button("Play");
     private Button instructions = new Button("Instructions");
-    Stage ps;
     
-    public WelcomeScreen(PingPongManager pingPongManager){
+    public WelcomeScreen(PingPongManager p){
         super(); 
+        pingPongManager = p;
         
         this.setBackground(new Background(new BackgroundFill(Color.BLACK, null, null)));
 
@@ -53,32 +53,23 @@ public class WelcomeScreen extends VBox{
 
         instructions.setStyle("-fx-background-color: RED");
         instructions.setFont(Font.font("Marker Felt", 20));
-        //instructions.setStyle("-fx-font-size:20");
 
-        //next.setOnAction(e -> showNextScreen());
         instructions.setOnAction(e -> showInstructionsScreen());
+        next.setOnAction(e -> showNextScreen());
 
         this.setAlignment(Pos.CENTER);
         this.getChildren().addAll(text1, text2, filler1, next, filler2, instructions, new ImageView(image)); 
 
-        // Scene scene = new Scene(gridPane); 
-        // ps.setTitle("The Scene is a real Pane");
-        // ps.setScene(scene); 
-        // ps.show();
 
     }
 
     private void showInstructionsScreen(){
-        // ps.close();
-        // PingPong game = new PingPong();
-        // game.start(ps);
-        pingPongManager.showInstructionsScreen();
+        Stage ps = new Stage();
+        InstructionScreen game = new InstructionScreen();
+        game.start(ps);
     }
 
-    //public void showNextScreen(){
-    // //     ps.close();
-    // //     InstructionScreen game = new InstructionScreen();
-    // //     game.start(ps);
-    // // 
-    // }
+    public void showNextScreen(){
+        pingPongManager.showPlayScreen();
+    }
 }

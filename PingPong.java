@@ -24,21 +24,22 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.Scene;
 import javafx.scene.input.KeyCode;
  
-public class PingPong extends Application{
+public class PingPong extends Pane{
 
     private Stage ps;
     private Rectangle paddle = new Rectangle(70, 35);
-    private Pane pane = new Pane(); 
-    private HBox clock;
+    //private Pane pane = new Pane(); 
     private Stage clockStage;
+    private PingPongManager pingPongManager;
+    private Scene scene;
 
     
-    @Override
-    public void start(Stage primaryStage){
-        ps = primaryStage;
-        Scene scene = new Scene(pane, 700, 400);
+    public PingPong(PingPongManager p, Scene s, Stage cs){
+        clockStage = cs;
+        scene = s;
+        pingPongManager = p;
  
-        pane.setBackground(new Background(new BackgroundFill(Color.BLACK, null, null)));
+        this.setBackground(new Background(new BackgroundFill(Color.BLACK, null, null)));
         
         String source = new File("song.mp3").toURI().toString();
         Media media = null;
@@ -54,14 +55,14 @@ public class PingPong extends Application{
         LinearGradient linearGradient = new LinearGradient(0, 0, 1, 0, true, CycleMethod.NO_CYCLE, stops); 
         paddle.setFill(linearGradient); 
  
-        paddle.setX(pane.getWidth()/2);
-        paddle.setY(pane.getHeight() - 10);
-        paddle.yProperty().bind(pane.heightProperty().subtract(10));
+        paddle.setX(this.getWidth()/2);
+        paddle.setY(this.getHeight() - 10);
+        paddle.yProperty().bind(this.heightProperty().subtract(10));
  
-        pane.getChildren().add(paddle);
-        Ball ball = new Ball(pane, paddle, ps, clockStage);
- 
-        scene.setOnKeyPressed(e -> {
+        this.getChildren().add(paddle);
+        Ball ball = new Ball(this, paddle, ps, clockStage, pingPongManager);
+
+        this.setOnKeyPressed(e -> {
             if(e.getCode() == KeyCode.RIGHT){
                 move(10);
             }
@@ -69,51 +70,17 @@ public class PingPong extends Application{
                 move(-10);
             }
         });
- 
-        // win.setOnAction(e -> win());
-        // lose.setOnAction(e -> lose());
-
-        drawClock();
-        // Platform.exit() --> just closes everything
-
-        ps.setTitle("Shouldn't there be a game here?");
-        ps.setScene(scene);
-        ps.show();
 
     }
- 
-    public void win(){
-        ps.close();
-        clockStage.close();
-        WinScreen game = new WinScreen();
-        game.start(ps);
-    }
- 
-    public void lose(){
-        ps.close();
-        clockStage.close();
-        LoseScreen game = new LoseScreen(clockStage);
-        game.start(ps);
-    }
- 
+    
     public void move(double x){
         paddle.setX(paddle.getX() + x); 
         if(paddle.getX() < 0){
             paddle.setX(0);
        }
-       if(paddle.getX() > pane.getWidth()-paddle.getWidth()){
-            paddle.setX(pane.getWidth() - paddle.getWidth());
+       if(paddle.getX() > this.getWidth()-paddle.getWidth()){
+            paddle.setX(this.getWidth() - paddle.getWidth());
        }
     }
     
-    public void drawClock(){
-        clockStage = new Stage();
-        clock = new Clock();
-        Scene clockScene = new Scene(clock, 700, 400);
-        clockStage.setTitle("Clock");
-        clockStage.setScene(clockScene);
-        clockStage.setX(ps.getX()+ ps.getWidth() + 30);
-        clockStage.setY(ps.getY());
-        clockStage.show();
-    }
 }

@@ -19,8 +19,10 @@ public class Ball{
     private Rectangle paddle;
     private Stage ps;
     private Stage clockStage;
+    private PingPongManager pingPongManager;
     
-    public Ball(Pane p, Rectangle q, Stage primaryStage, Stage cs){
+    public Ball(Pane p, Rectangle q, Stage primaryStage, Stage cs, PingPongManager pp){
+        pingPongManager = pp;
         circle.setFill(Color.WHITE); //Set ball color
         pane = p;
         paddle = q;
@@ -53,10 +55,11 @@ public class Ball{
         y += dy;
         if(y > pane.getHeight()){
             y = 0;
-            LoseScreen game = new LoseScreen();
-            ps.close();
+            Stage ps = new Stage();
+            LoseScreen game = new LoseScreen(clockStage);
             game.start(ps);
-            //clockStage.close();
+            clockStage.close();
+            pingPongManager.gameOver();
 
         }
         circle.setCenterX(x);

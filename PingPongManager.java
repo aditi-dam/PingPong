@@ -1,6 +1,7 @@
 import javafx.application.Application;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
@@ -12,9 +13,11 @@ import javafx.stage.Stage;
  */
 public class PingPongManager extends Application {
 
+    Pane welcomeScreen;
+    Pane playScreen;
+
     Stage primaryStage;
     //Save screenA so you don't have to build it every time
-    Pane welcomeScreen;
 
     //NOTE: You could save screenB too, if you wanted to keep changes between switches
     //Pane screenB;
@@ -71,16 +74,32 @@ public class PingPongManager extends Application {
      * See the 3 commented lines with NOTE above them
      * 
      */
-    public void showInstructionsScreen(){
+    public void showPlayScreen(){
         //This is the scene we set before.
-        System.out.println("Hi");
         Scene scene = primaryStage.getScene();
 
         //Change the "root" to be a *new* screenA, which we've never changed;
-        scene.setRoot(new InstructionScreen(this));
 
         //NOTE: You could save screenB too, if you wanted to keep changes between switches
-        //cene.setRoot(screenB);
+        //Scene.setRoot(screenB);
+        Stage clockStage = new Stage();
+        HBox clock = new Clock();
+        Scene clockScene = new Scene(clock, 700, 400);
+        clockStage.setTitle("Clock");
+        clockStage.setScene(clockScene);
+        clockStage.setX(primaryStage.getX()+ primaryStage.getWidth() + 30);
+        clockStage.setY(primaryStage.getY());
+        clockStage.show();
+
+        playScreen = new PingPong(this, scene, clockStage);
+
+        scene.setRoot(playScreen);
+        playScreen.requestFocus();
+
+    }
+
+    public void gameOver(){
+        primaryStage.close();
     }
 
 
