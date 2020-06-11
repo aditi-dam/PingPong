@@ -42,7 +42,7 @@ public class WelcomeScreen extends VBox{
         filler1.setFill(Color.BLACK);
         filler2.setFill(Color.BLACK);
 
-        Image image = new Image("unnamed.png", 150, 150, false, false);
+        Image image = new Image("image.png", 150, 150, false, false);
 
         next.setStyle("-fx-background-color: DODGERBLUE");
         next.setFont(Font.font("Marker Felt", 20));

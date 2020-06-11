@@ -32,7 +32,8 @@ public class InstructionScreen extends Application{
             "Welcome to Ping Pong!\n"+
             "Are your reflexes fast enough, or will this game get the best of you?\n\n"+
             "When you're done reading, click on the 'Return to Welcome Screen' button. "+
-            "\nClick 'Next' to start the real game. \nUse your paddle to keep the ball from "+
+            "\nClick 'Next' to start the real game. To interact with the game screen, "
+            +"click on the 'Multi-Screen Demo' window."+"\nUse your paddle to keep the ball from "+
             "getting past you as it bounces off the walls. Can you do it until time runs out? "+
             "\nIf you succeed, you'll be a Ping Pong champion! \nReady? Let's play!");
  
