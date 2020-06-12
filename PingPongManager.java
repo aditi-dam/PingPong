@@ -8,6 +8,7 @@ import javafx.stage.Stage;
 public class PingPongManager extends Application {
 
     Pane welcomeScreen;
+    //changes
     Pane playScreen;
 
     Stage primaryStage;

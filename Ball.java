@@ -3,6 +3,7 @@ import javafx.util.Duration;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.stage.Stage;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
@@ -67,10 +68,12 @@ public class Ball{
         
     }
     
-    
-    public void setSPEED(int sPEED) {
-        SPEED = sPEED;
+    public void setX(double x) {
+        this.x = x;
     }
-    
+
+    public void setY(double y) {
+        this.y = y;
+    }
 
 }

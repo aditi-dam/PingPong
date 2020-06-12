@@ -45,7 +45,7 @@ public class PingPong extends Pane{
         LinearGradient linearGradient = new LinearGradient(0, 0, 1, 0, true, CycleMethod.NO_CYCLE, stops); 
         paddle.setFill(linearGradient); 
  
-        paddle.setX(this.getWidth()/2);
+        paddle.setX(this.getWidth()/2 + 300);
         paddle.setY(this.getHeight() - 10);
         paddle.yProperty().bind(this.heightProperty().subtract(10));
  
@@ -73,4 +73,4 @@ public class PingPong extends Pane{
        }
     }
     
-}
+}   
