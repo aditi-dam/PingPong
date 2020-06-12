@@ -19,7 +19,11 @@ public class WelcomeScreen extends VBox{
     private Text text2 = new Text("Are you ready to have some fun?");
     private Text filler1 = new Text("");
     private Text filler2 = new Text("");
-    private Button next = new Button("Play");
+    private Text filler3 = new Text("");
+    private Text filler4 = new Text("");
+    private Button easy = new Button("Easy");
+    private Button medium = new Button("Medium");
+    private Button hard = new Button("Hard");
     private Button instructions = new Button("Instructions");
     
     public WelcomeScreen(PingPongManager p){
@@ -44,17 +48,23 @@ public class WelcomeScreen extends VBox{
 
         Image image = new Image("image.png", 150, 150, false, false);
 
-        next.setStyle("-fx-background-color: DODGERBLUE");
-        next.setFont(Font.font("Marker Felt", 20));
+        easy.setStyle("-fx-background-color: DODGERBLUE");
+        easy.setFont(Font.font("Marker Felt", 20));
+        medium.setStyle("-fx-background-color: DODGERBLUE");
+        medium.setFont(Font.font("Marker Felt", 20));
+        hard.setStyle("-fx-background-color: DODGERBLUE");
+        hard.setFont(Font.font("Marker Felt", 20));
 
         instructions.setStyle("-fx-background-color: RED");
         instructions.setFont(Font.font("Marker Felt", 20));
 
         instructions.setOnAction(e -> showInstructionsScreen());
-        next.setOnAction(e -> showNextScreen());
+        easy.setOnAction(e -> showEasyScreen());
+        medium.setOnAction(e -> showMediumScreen());
+        hard.setOnAction(e -> showHardScreen());
 
         this.setAlignment(Pos.CENTER);
-        this.getChildren().addAll(text1, text2, filler1, next, filler2, instructions, new ImageView(image)); 
+        this.getChildren().addAll(text1, text2, filler1, easy, filler2, medium, filler3, hard, filler4, instructions, new ImageView(image)); 
 
 
     }
@@ -65,7 +75,15 @@ public class WelcomeScreen extends VBox{
         game.start(ps);
     }
 
-    public void showNextScreen(){
+    public void showEasyScreen(){
+        pingPongManager.showPlayScreen();
+    }
+
+    public void showMediumScreen(){
+        pingPongManager.showPlayScreen();
+    }
+
+    public void showHardScreen(){
         pingPongManager.showPlayScreen();
     }
 }
