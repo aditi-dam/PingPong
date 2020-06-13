@@ -51,6 +51,27 @@ public class PingPongManager extends Application {
 
     }
 
+    public void showMediumScreen(){
+        Scene scene = primaryStage.getScene();
+
+        Stage clockStage = new Stage();
+        Clock clock = new Clock(this, clockStage);
+        clockStage.setWidth(400);
+        clockStage.setHeight(120);
+        Scene clockScene = new Scene(clock, 700, 400);
+        clockStage.setTitle("Clock");
+        clockStage.setScene(clockScene);
+        clockStage.setX(primaryStage.getX()+ primaryStage.getWidth() - 400);
+        clockStage.setY(primaryStage.getY()+400);
+        clockStage.show();
+
+        playScreen = new Medium(this, scene, clockStage, clock);
+
+        scene.setRoot(playScreen);
+        playScreen.requestFocus();
+
+    }
+
     public void gameOver(){
         primaryStage.close();
     }

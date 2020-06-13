@@ -17,10 +17,10 @@ import javafx.scene.input.KeyCode;
  
 public class PingPong extends Pane{
 
-    private Stage ps;
-    private Rectangle paddle = new Rectangle(70, 35);
-    private Stage clockStage;
-    private PingPongManager pingPongManager;
+    protected Stage ps;
+    protected Rectangle paddle = new Rectangle(70, 35);
+    protected Stage clockStage;
+    protected PingPongManager pingPongManager;
     private Scene scene;
 
     
