@@ -25,7 +25,7 @@ public class Medium extends PingPong {
        if(paddle.getX() > this.getWidth()-paddle.getWidth()){
             paddle.setX(this.getWidth() - paddle.getWidth());
        }
-       if(clock.getSeconds() <= 35){
+       if(clock.getSeconds() <= 55){
         generateNewBall();
        }
     }

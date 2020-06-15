@@ -84,6 +84,6 @@ public class WelcomeScreen extends VBox{
     }
 
     public void showHardScreen(){
-        pingPongManager.showPlayScreen();
+        pingPongManager.showHardScreen();
     }
 }
