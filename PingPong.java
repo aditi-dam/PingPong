@@ -43,10 +43,10 @@ public class PingPong extends Pane{
 
         this.setOnKeyPressed(e -> {
             if(e.getCode() == KeyCode.RIGHT){
-                move(12);
+                move(11);
             }
             else if(e.getCode() == KeyCode.LEFT){
-                move(-12);
+                move(-11);
             }
         });
 

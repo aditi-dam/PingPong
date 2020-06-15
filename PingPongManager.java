@@ -41,7 +41,7 @@ public class PingPongManager extends Application {
         clockStage.setTitle("Clock");
         clockStage.setScene(clockScene);
         clockStage.setX(primaryStage.getX()+ primaryStage.getWidth() - 550);
-        clockStage.setY(primaryStage.getY()+450);
+        clockStage.setY(primaryStage.getY()+550);
         clockStage.show();
 
         playScreen = new PingPong(this, scene, clockStage);
@@ -61,8 +61,8 @@ public class PingPongManager extends Application {
         Scene clockScene = new Scene(clock, 700, 400);
         clockStage.setTitle("Clock");
         clockStage.setScene(clockScene);
-        clockStage.setX(primaryStage.getX()+ primaryStage.getWidth() - 400);
-        clockStage.setY(primaryStage.getY()+400);
+        clockStage.setX(primaryStage.getX()+ primaryStage.getWidth() - 550);
+        clockStage.setY(primaryStage.getY()+550);
         clockStage.show();
 
         playScreen = new Medium(this, scene, clockStage, clock);
@@ -82,8 +82,8 @@ public class PingPongManager extends Application {
         Scene clockScene = new Scene(clock, 700, 400);
         clockStage.setTitle("Clock");
         clockStage.setScene(clockScene);
-        clockStage.setX(primaryStage.getX()+ primaryStage.getWidth());
-        clockStage.setY(primaryStage.getY()+400);
+        clockStage.setX(primaryStage.getX()+ primaryStage.getWidth()-550);
+        clockStage.setY(primaryStage.getY()+5500);
         clockStage.show();
 
         playScreen = new Hard(this, scene, clockStage, clock);
