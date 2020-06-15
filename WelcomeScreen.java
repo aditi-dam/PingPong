@@ -80,10 +80,10 @@ public class WelcomeScreen extends VBox{
     }
 
     public void showMediumScreen(){
-        pingPongManager.showPlayScreen();
+        pingPongManager.showMediumScreen();
     }
 
     public void showHardScreen(){
-        pingPongManager.showPlayScreen();
+        pingPongManager.showHardScreen();
     }
 }

@@ -17,10 +17,10 @@ import javafx.scene.input.KeyCode;
  
 public class PingPong extends Pane{
 
-    private Stage ps;
-    private Rectangle paddle = new Rectangle(70, 35);
-    private Stage clockStage;
-    private PingPongManager pingPongManager;
+    protected Stage ps;
+    protected Rectangle paddle;
+    protected Stage clockStage;
+    protected PingPongManager pingPongManager;
     private Scene scene;
 
     
@@ -37,27 +37,16 @@ public class PingPong extends Pane{
         MediaPlayer mediaPlayer = new MediaPlayer(media);
         mediaPlayer.setStartTime(new Duration(0));
         mediaPlayer.play();
- 
-        Stop[] stops = new Stop[] { 
-            new Stop(0, Color.DODGERBLUE),  
-            new Stop(1, Color.RED)
-        };  
-        LinearGradient linearGradient = new LinearGradient(0, 0, 1, 0, true, CycleMethod.NO_CYCLE, stops); 
-        paddle.setFill(linearGradient); 
- 
-        paddle.setX(this.getWidth()/2 + 300);
-        paddle.setY(this.getHeight() - 10);
-        paddle.yProperty().bind(this.heightProperty().subtract(10));
- 
-        this.getChildren().add(paddle);
+
+        drawPaddle();
         Ball ball = new Ball(this, paddle, ps, clockStage, pingPongManager);
 
         this.setOnKeyPressed(e -> {
             if(e.getCode() == KeyCode.RIGHT){
-                move(12);
+                move(11);
             }
             else if(e.getCode() == KeyCode.LEFT){
-                move(-12);
+                move(-11);
             }
         });
 
@@ -71,6 +60,23 @@ public class PingPong extends Pane{
        if(paddle.getX() > this.getWidth()-paddle.getWidth()){
             paddle.setX(this.getWidth() - paddle.getWidth());
        }
+    }
+
+    public void drawPaddle(){
+        paddle = new Rectangle(70, 35);
+ 
+        Stop[] stops = new Stop[] { 
+            new Stop(0, Color.DODGERBLUE),  
+            new Stop(1, Color.RED)
+        };  
+        LinearGradient linearGradient = new LinearGradient(0, 0, 1, 0, true, CycleMethod.NO_CYCLE, stops); 
+        paddle.setFill(linearGradient); 
+ 
+        paddle.setX(this.getWidth()/2 + 300);
+        paddle.setY(this.getHeight() - 10);
+        paddle.yProperty().bind(this.heightProperty().subtract(10));
+ 
+        this.getChildren().add(paddle);
     }
     
 }   
