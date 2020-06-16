@@ -26,11 +26,11 @@ public class Medium extends PingPong {
             paddle.setX(this.getWidth() - paddle.getWidth());
        }
        if(clock.getSeconds() <= 55){
-        generateNewBall();
+        generateNewBall(ball2);
        }
     }
 
-    public void generateNewBall(){
+    public void generateNewBall(Ball ball2){
         if(!ballExists){
             ball2 = new Ball(this, this.paddle, this.ps, this.clockStage, this.pingPongManager);
             ball2.setX(scene.getWidth() - 30);
