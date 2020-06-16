@@ -8,10 +8,12 @@ import javafx.stage.Stage;
 public class PingPongManager extends Application {
 
     Pane welcomeScreen;
+    private Stage clockStage;
     //changes
     Pane playScreen;
 
     Stage primaryStage;
+    private Integer counter = 0;
     
     @Override
     public void start(Stage stage) throws Exception {
@@ -54,7 +56,7 @@ public class PingPongManager extends Application {
     public void showMediumScreen(){
         Scene scene = primaryStage.getScene();
 
-        Stage clockStage = new Stage();
+        clockStage = new Stage();
         Clock clock = new Clock(this, clockStage);
         clockStage.setWidth(400);
         clockStage.setHeight(120);
@@ -92,8 +94,18 @@ public class PingPongManager extends Application {
         playScreen.requestFocus();
     }
 
-    public void gameOver(){
+    public void gameOver(Boolean winner){
         primaryStage.close();
+        if(counter == 0 && winner){
+            WinScreen game = new WinScreen();
+            game.start(primaryStage);
+            counter++;
+        }
+        else if(counter == 0 && !winner){
+            LoseScreen game = new LoseScreen(primaryStage);
+            game.start();
+            counter++;
+        }
     }
 
 

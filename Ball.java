@@ -56,10 +56,10 @@ public class Ball{
         if(y > pane.getHeight()){
             y = 0;
             Stage ps = new Stage();
-            LoseScreen game = new LoseScreen(clockStage);
-            game.start(ps);
             clockStage.close();
-            pingPongManager.gameOver();
+            WinScreen game = new WinScreen();
+            pingPongManager.gameOver(false);
+                
 
         }
         circle.setCenterX(x);
