@@ -12,7 +12,7 @@ public class Hard extends PingPong{
     private Clock clock;
     private Ball ball2;
     private Ball ball3;
-    private Integer counter = 0;
+    public Integer counter = 1;
     private Scene scene;
     //private Boolean ballExists = false;
 
@@ -24,18 +24,19 @@ public class Hard extends PingPong{
     } 
 
     public void move(double x){
-        paddle.setX(paddle.getX() + x); 
+        paddle.setX(paddle.getX() + x);
         if(paddle.getX() < 0){
             paddle.setX(0);
-       }
-       if(paddle.getX() > this.getWidth()-paddle.getWidth()){
+        }
+        if(paddle.getX() > this.getWidth()-paddle.getWidth()){
             paddle.setX(this.getWidth() - paddle.getWidth());
-       }
-       if((clock.getSeconds() <= 55)){
-           generateNewBall(ball2);
-       }if((clock.getSeconds() <= 30)){
-        generateNewBall(ball3);
-    }
+        }
+        if((clock.getSeconds() <= 55)){
+            generateNewBall(ball2);
+        }
+        if((clock.getSeconds() <= 20)){
+            generateNewBall(ball3);
+        }
 
     }
 
@@ -43,6 +44,11 @@ public class Hard extends PingPong{
         if(counter < 2){
             ball2 = new Ball(this, this.paddle, this.ps, this.clockStage, this.pingPongManager);
             ball2.setX(scene.getWidth() - 30);
+            counter++;
+        }
+        else if (counter < 3) {
+            ball2 = new Ball(this, this.paddle, this.ps, this.clockStage, this.pingPongManager);
+            ball2.setX(scene.getWidth() - 150);
             counter++;
         }
     }
