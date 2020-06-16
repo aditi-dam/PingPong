@@ -71,6 +71,14 @@ public class Clock extends HBox{
     public void setSeconds(Integer seconds) {
         this.seconds = seconds;
     }
+
+    public Integer getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime(Integer startTime) {
+        this.startTime = startTime;
+    }
 }
 
    

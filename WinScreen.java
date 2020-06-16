@@ -31,10 +31,9 @@ public class WinScreen{
         alert.setContentText("You were able to keep the ball in check. Good job! "+
                             "You're now a Ping Pong winner. Want to play again?");
     
-        ButtonType playAgain = new ButtonType("Play Again");
         ButtonType buttonTypeCancel = new ButtonType("Cancel", ButtonData.CANCEL_CLOSE);
     
-        alert.getButtonTypes().setAll(playAgain, buttonTypeCancel);
+        alert.getButtonTypes().setAll(buttonTypeCancel);
     
        Platform.runLater(alert::showAndWait);
     }
