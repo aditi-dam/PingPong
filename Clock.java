@@ -11,9 +11,9 @@ import javafx.scene.paint.Stop;
 import javafx.scene.text.Font; 
 import javafx.stage.Stage;
 import javafx.util.Duration; 
-
+ 
 public class Clock extends HBox{
-    private Integer startTime = 10; 
+    private Integer startTime = 60; 
     private Integer seconds = startTime; 
     public Label label; 
     private PingPongManager pingPongManager;
@@ -22,7 +22,7 @@ public class Clock extends HBox{
     public Clock(PingPongManager p, Stage cs) {
         pingPongManager = p;
         clockStage = cs;
-
+ 
         label = new Label();
         Stop[] stops = new Stop[] { 
             new Stop(0, Color.DODGERBLUE),  
@@ -37,7 +37,7 @@ public class Clock extends HBox{
         doTime();
         
     }
-
+ 
     private void doTime(){
         Timeline time = new Timeline();
         time.setCycleCount(Timeline.INDEFINITE);
@@ -45,7 +45,7 @@ public class Clock extends HBox{
                 time.stop();
             }
         KeyFrame frame = new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>(){
-
+ 
             @Override
             public void handle(ActionEvent event) {
                 seconds --;
@@ -62,22 +62,24 @@ public class Clock extends HBox{
         time.getKeyFrames().add(frame);
         time.playFromStart();
     }
-
+ 
     public Integer getSeconds() {
         return seconds;
     }
-
+ 
     public void setSeconds(Integer seconds) {
         this.seconds = seconds;
     }
-
+ 
     public Integer getStartTime() {
         return startTime;
     }
-
+ 
     public void setStartTime(Integer startTime) {
         this.startTime = startTime;
     }
 }
-
+ 
    
+ 
+

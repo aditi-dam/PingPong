@@ -6,11 +6,11 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ButtonBar.ButtonData;
 import javafx.scene.layout.Region;
 import javafx.stage.Stage;
-
-
+ 
+ 
 public class WinScreen{
     private Stage ps;
-
+ 
     public void start(Stage primaryStage){
         ps = primaryStage;
         showWinScreen();
@@ -20,12 +20,12 @@ public class WinScreen{
         Alert alert = new Alert(AlertType.CONFIRMATION);
         alert.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
         alert.setResizable(true);
-
+ 
         DialogPane dialogPane = alert.getDialogPane();
         dialogPane.getStylesheets().add(
             getClass().getResource("win.css").toExternalForm());
         dialogPane.getStyleClass().add(".dialog-pane");
-
+ 
         alert.setTitle("Nice reflexes.");
         alert.setHeaderText("Hey, you won!");
         alert.setContentText("You were able to keep the ball in check. Good job! "+
@@ -37,5 +37,7 @@ public class WinScreen{
     
        Platform.runLater(alert::showAndWait);
     }
-
+ 
 }
+ 
+

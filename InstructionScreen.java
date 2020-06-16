@@ -1,5 +1,4 @@
 import java.util.Optional;
-
 import javafx.application.Application;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
@@ -10,7 +9,7 @@ import javafx.stage.Stage;
  
 public class InstructionScreen extends Application{
     Stage ps;
-
+ 
     public void start(Stage p){
         ps = p;
         showInstructions();
@@ -49,3 +48,6 @@ public class InstructionScreen extends Application{
         }
     } 
 }
+ 
+ 
+

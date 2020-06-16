@@ -1,5 +1,4 @@
 import java.io.File;
-
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import javafx.scene.layout.Background;
@@ -16,13 +15,13 @@ import javafx.scene.Scene;
 import javafx.scene.input.KeyCode;
  
 public class PingPong extends Pane{
-
+ 
     protected Stage ps;
     protected Rectangle paddle;
     protected Stage clockStage;
     protected PingPongManager pingPongManager;
     private Scene scene;
-
+ 
     
     public PingPong(PingPongManager p, Scene s, Stage cs){
         clockStage = cs;
@@ -37,19 +36,19 @@ public class PingPong extends Pane{
         MediaPlayer mediaPlayer = new MediaPlayer(media);
         mediaPlayer.setStartTime(new Duration(0));
         mediaPlayer.play();
-
+ 
         drawPaddle();
         Ball ball = new Ball(this, paddle, ps, clockStage, pingPongManager);
-
+ 
         this.setOnKeyPressed(e -> {
             if(e.getCode() == KeyCode.RIGHT){
-                move(11);
+                move(15);
             }
             else if(e.getCode() == KeyCode.LEFT){
-                move(-11);
+                move(-15);
             }
         });
-
+ 
     }
     
     public void move(double x){
@@ -61,7 +60,7 @@ public class PingPong extends Pane{
             paddle.setX(this.getWidth() - paddle.getWidth());
        }
     }
-
+ 
     public void drawPaddle(){
         paddle = new Rectangle(70, 35);
  
@@ -80,3 +79,5 @@ public class PingPong extends Pane{
     }
     
 }   
+ 
+

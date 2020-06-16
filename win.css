@@ -3,17 +3,19 @@
     -fx-border-color: linear-gradient(DODGERBLUE, red);
     -fx-border-width: 3;
 }
-
+ 
 .dialog-pane .label {
     -fx-text-fill: white;
 }
-
+ 
 .dialog-pane:header .header-panel {
     -fx-background-color: black;
     -fx-text-fill: white;
 }
-
+ 
 .button {
     -fx-text-fill: white;
     -fx-text-fill: dodgerblue;
 }
+ 
+

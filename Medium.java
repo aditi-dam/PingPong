@@ -1,14 +1,13 @@
 import javafx.scene.Scene;
-import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
-
+ 
 public class Medium extends PingPong {
     private Ball ball;
     private Clock clock;
     private Ball ball2;
     private Scene scene;
     private Boolean ballExists = false;
-
+ 
     public Medium(PingPongManager p, Scene s, Stage cs,  Clock c) {
         super(p, s, cs);
         scene = s;
@@ -29,7 +28,7 @@ public class Medium extends PingPong {
         generateNewBall(ball2);
        }
     }
-
+ 
     public void generateNewBall(Ball ball2){
         if(!ballExists){
             ball2 = new Ball(this, this.paddle, this.ps, this.clockStage, this.pingPongManager);
@@ -37,7 +36,9 @@ public class Medium extends PingPong {
             ballExists = true;
         }
     }
-
-
+ 
+ 
     
 }
+ 
+
