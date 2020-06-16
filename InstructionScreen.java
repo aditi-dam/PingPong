@@ -29,14 +29,15 @@ public class InstructionScreen extends Application{
  
         alert.setHeaderText("How to Play:");
         alert.setContentText(
-            "Welcome to Ping Pong!\n"+
-            "Are your reflexes fast enough, or will this game get the best of you?"+
+            "Welcome to Ping Pong! "+
+            "Are your reflexes fast enough, or will this game get the best of you?\n\n"+
             "When you're done reading, close this screen. "+
             "Click the level of your choice to start the real game. To interact with the game screen, "
-            +"click on the 'Let's Play!' window."+"Use your paddle to keep the ball from "+
+            +"click on the 'Let's Play!' window."+"\n\nUse your paddle to keep the ball from "+
             "getting past you as it bounces off the walls. Can you do it until time runs out? "+
-            "If you succeed, you'll be a Ping Pong champion! Beware, in the harder levels," + 
-            "you might not see the timer though it will be behind the scenes, and will get extra balls! Ready? Let's play!");
+            "If you succeed, you'll be a Ping Pong champion! \n\nBeware: in the harder levels," + 
+            " you might not see the timer though it will be behind the scenes, and will get extra balls!\n\nReady?" 
+            +" Let's play!");
  
         ButtonType close = new ButtonType("Close");
   
