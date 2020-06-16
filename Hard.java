@@ -48,7 +48,7 @@ public class Hard extends PingPong{
         }
         else if (counter < 3) {
             ball2 = new Ball(this, this.paddle, this.ps, this.clockStage, this.pingPongManager);
-            ball2.setX(scene.getWidth() - 150);
+            ball2.setX(scene.getWidth() - 130);
             counter++;
         }
     }
