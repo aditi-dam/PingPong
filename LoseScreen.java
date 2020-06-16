@@ -11,7 +11,7 @@ public class LoseScreen{
         clockStage.close();
     }
 
-    public void start(){
+    public void start(Stage primaryStage){
         showLoseScreen();
     }
     

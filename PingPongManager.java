@@ -103,7 +103,7 @@ public class PingPongManager extends Application {
         }
         else if(counter == 0 && !winner){
             LoseScreen game = new LoseScreen(primaryStage);
-            game.start();
+            game.start(primaryStage);
             counter++;
         }
     }
