@@ -19,7 +19,7 @@ public class PingPongManager extends Application {
         primaryStage = stage;
         welcomeScreen = new WelcomeScreen(this);
         Scene scene = new Scene(welcomeScreen);
-        primaryStage.setTitle("Multi-screen Demo");
+        primaryStage.setTitle("Let's play!");
         primaryStage.setScene(scene);
         primaryStage.show();
     }
