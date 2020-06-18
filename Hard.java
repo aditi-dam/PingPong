@@ -28,21 +28,21 @@ public class Hard extends PingPong{
         if((clock.getSeconds() <= 48)){
             generateNewBall(ball2);
         }
-        if((clock.getSeconds() <= 40)){
+        if((clock.getSeconds() <= 20)){
             generateNewBall(ball3);
         }
  
     }
  
-    public void generateNewBall(Ball ball2){
+    public void generateNewBall(Ball ball){
         if(counter < 2){
-            ball2 = new Ball(this, this.paddle, this.ps, this.clockStage, this.pingPongManager);
-            ball2.setX(scene.getWidth() - 30);
+            ball = new Ball(this, this.paddle, this.ps, this.clockStage, this.pingPongManager);
+            ball.setX(scene.getWidth() - 30);
             counter = 2;
         }
         else if (counter < 3 && clock.getSeconds() <= 20) {
-            ball2 = new Ball(this, this.paddle, this.ps, this.clockStage, this.pingPongManager);
-            ball2.setX(scene.getWidth() - 130);
+            ball = new Ball(this, this.paddle, this.ps, this.clockStage, this.pingPongManager);
+            ball.setX(scene.getWidth() - 130);
             counter = 3;
         }
     }
