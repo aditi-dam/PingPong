@@ -28,7 +28,7 @@ public class Hard extends PingPong{
         if((clock.getSeconds() <= 48)){
             generateNewBall(ball2);
         }
-        if((clock.getSeconds() <= 20)){
+        if((clock.getSeconds() <= 30)){
             generateNewBall(ball3);
         }
  
@@ -40,7 +40,7 @@ public class Hard extends PingPong{
             ball.setX(scene.getWidth() - 30);
             counter = 2;
         }
-        else if (counter < 3 && clock.getSeconds() <= 20) {
+        else if (counter < 3 && clock.getSeconds() <= 30) {
             ball = new Ball(this, this.paddle, this.ps, this.clockStage, this.pingPongManager);
             ball.setX(scene.getWidth() - 130);
             counter = 3;
